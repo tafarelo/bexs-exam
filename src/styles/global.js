@@ -26,6 +26,10 @@ export default createGlobalStyle`
       padding-top: 40px;
       padding-top: 40px;
     }
+    @media only screen and (min-width: 1250px) {
+    background: linear-gradient(90deg, rgba(222,75,75,1) 0%, rgba(222,75,75,1) 40%, rgba(255,255,255,1) 40%);
+    }
+
   }
 
   a {

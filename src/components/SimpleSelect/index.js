@@ -82,5 +82,5 @@ SimpleSelect.defaultProps = {
     id: 1,
     value: 'Valor 1',
   }],
-  errorMessage: 'a',
+  errorMessage: '',
 };

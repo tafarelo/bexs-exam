@@ -9,7 +9,7 @@ import Grid from '../../Grid';
 import SimpleButton from '../../SimpleButton';
 
 function CardForm(props) {
-  const { emitPayload } = props;
+  const { emitPayload, validation } = props;
   const [cardNumber, setCardNumber] = useState('');
   const [cardName, setCardName] = useState('');
   const [cardValid, setCardValid] = useState('');
@@ -84,21 +84,21 @@ function CardForm(props) {
         <Grid xs={12} sm={6}>
           <Grid container spacing={3}>
             <Grid xs={12} sm={12}>
-              <SimpleInput changeValue={(val) => setCardNumber(val)} label="Número do cartão" mask="9999 9999 9999 9999" id={1} onFocus={onFocusInput} />
+              <SimpleInput changeValue={(val) => setCardNumber(val)} label="Número do cartão" mask="9999 9999 9999 9999" id={1} onFocus={onFocusInput} errorMessage={validation.cardNumber} />
             </Grid>
             <Grid xs={12} sm={12}>
-              <SimpleInput changeValue={(val) => setCardName(val)} label="Nome (igual ao cartão)" mask="" id={2} onFocus={onFocusInput} />
+              <SimpleInput changeValue={(val) => setCardName(val)} label="Nome (igual ao cartão)" mask="" id={2} onFocus={onFocusInput} errorMessage={validation.cardName} />
             </Grid>
             <Grid xs={6} sm={6}>
-              <SimpleInput changeValue={(val) => setCardValid(val)} label="Validade" mask="99/99" id={3} onFocus={onFocusInput} />
+              <SimpleInput changeValue={(val) => setCardValid(val)} label="Validade" mask="99/99" id={3} onFocus={onFocusInput} errorMessage={validation.cardValid} />
             </Grid>
             <Grid xs={6} sm={6}>
-              <SimpleInput changeValue={(val) => setCardCVV(val)} label="CVV" mask="999" id={4} onFocus={onFocusInput} />
+              <SimpleInput changeValue={(val) => setCardCVV(val)} label="CVV" mask="999" id={4} onFocus={onFocusInput} errorMessage={validation.cardCVV} />
             </Grid>
             {
               optionsInstallments && (
                 <Grid xs={12} sm={12}>
-                  <SimpleSelect label="Número de parcelas" options={optionsInstallments} changeValue={(val) => setInstallments(val)} />
+                  <SimpleSelect label="Número de parcelas" options={optionsInstallments} changeValue={(val) => setInstallments(val)} errorMessage={validation.installments} />
                 </Grid>
               )
             }
@@ -117,4 +117,9 @@ export default CardForm;
 
 CardForm.propTypes = {
   emitPayload: PropTypes.func.isRequired,
+  validation: PropTypes.shape(),
+};
+
+CardForm.defaultProps = {
+  validation: {},
 };

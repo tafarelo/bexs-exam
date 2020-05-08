@@ -44,7 +44,7 @@ function SimpleInput(props) {
               mask={mask ? mask : false}
               onChange={(event) => changeValue(event.target.value)}
               onFocus={() => onFocus(id)}
-              guide={false}
+              maskChar={null}
             >
               {() => <CssTextField error={!!errorMessage} helperText={errorMessage} label={label} />}
             </InputMask>
@@ -70,5 +70,5 @@ SimpleInput.propTypes = {
 SimpleInput.defaultProps = {
   label: 'InputLabel',
   onFocus: () => {},
-  errorMessage: 'a',
+  errorMessage: '',
 };

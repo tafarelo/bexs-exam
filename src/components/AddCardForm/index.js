@@ -8,11 +8,11 @@ import 'react-credit-cards/es/styles-compiled.css';
 import { Container, Div } from './styles';
 
 function AddCardForm(props) {
-  const { emitPayload } = props;
+  const { emitPayload, validations } = props;
   return (<Container>
     <LabelAddCard />
     <Div>
-      <CardForm emitPayload={(data) => emitPayload(data)} />
+      <CardForm emitPayload={(data) => emitPayload(data)} validation={validations} />
     </Div>
   </Container>);
 }
@@ -21,4 +21,10 @@ export default AddCardForm;
 
 AddCardForm.propTypes = {
   emitPayload: PropTypes.func.isRequired,
+  validations: PropTypes.shape(),
+};
+
+
+AddCardForm.defaultProps = {
+  validations: {},
 };
