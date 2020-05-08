@@ -1,7 +1,7 @@
 # bexs-front-end-exam 👋
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 
-> Exame front end. Qualquer duvida e/ou sugestao por, favor entre em contato comigo por qual um dos canais de comunicacao citados abaixo.
+> Exame front end. Qualquer duvida e/ou sugestao por favor entre em contato comigo por qual um dos canais de comunicacao citados abaixo.
 
 ## Install
 
